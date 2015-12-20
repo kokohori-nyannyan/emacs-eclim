@@ -341,7 +341,7 @@ argument PROJECTNAME is given, return that project's root directory."
 (defun eclim-project-name (&optional filename)
   "Returns this file's project name. If the optional argument
 FILENAME is given, return that file's  project name instead."
-  (cl-labels ((get-project-name (file)
+  (labels ((get-project-name (file)
                              (eclim/execute-command "project_by_resource" ("-f" file))))
     (if filename
         (get-project-name filename)
